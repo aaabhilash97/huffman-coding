@@ -67,6 +67,7 @@ char *decode(struct node *root,char *s)
 	int i=0;
 	struct node *c=root;
 	for(;*s!='\0';s++){
+		printf("%s\n",s);
 		if(strncmp("0",s,1)==0){
 			root=root->left;
 			if(strcmp("*",root->name)!=0){
@@ -87,7 +88,7 @@ char *decode(struct node *root,char *s)
 }
 main(int argc,char *argv[])
 {
-	char a[]="aaabccdeeeeeffglihs";
+	char a[]="abbcccddddeeeeeffffffggggggghijklmnopqrstuvwxyfz";
 	struct node *root=frequency(a);
 	root=tree(root);
 	assigncodes(root,"","");
