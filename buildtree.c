@@ -30,7 +30,7 @@ void treebuild(struct node *root,struct node *f)
 	new->right=f->next;
 	f->next=f->next->next=NULL;
 	new->next=NULL;
-	new->name="*";
+	new->name="zz";
 	new->count=new->left->count+new->right->count;
 }
 struct node *tree(struct node *root)
@@ -38,18 +38,20 @@ struct node *tree(struct node *root)
 	struct node *front=NULL;
 	struct node *back=NULL;
 	while(len(root)>1){
-	InsertSort(&root);
-	frontandbacksplit(root,&front,&back);
-	root=back;
-	treebuild(root,front);
+		InsertSortt(&root);
+		InsertSort(&root);
+		frontandbacksplit(root,&front,&back);
+		root=back;
+		treebuild(root,front);
 	}
+	InsertSortt(&root);
 	InsertSort(&root);
 	struct node *new=malloc(sizeof(struct node));
         new->left=root;
 	new->right=root->next;
 	root->next->next=NULL;
 	new->count=new->left->count+new->right->count;
-	new->name="*";
+	new->name="zz";
 	new->next=NULL;
 	return new;
 }

@@ -69,13 +69,13 @@ char *decode(struct node *root,char *s)
 	for(;*s!='\0';s++){
 		if(strncmp("0",s,1)==0){
 			root=root->left;
-			if(strcmp("*",root->name)!=0){
+			if(strcmp("zz",root->name)!=0){
 				o[i]=*(root->name);i++;
 				root=c;}
 		}
 		else if(strncmp("1",s,1)==0){
 			root=root->right;
-                        if(strcmp("*",root->name)!=0){
+                        if(strcmp("zz",root->name)!=0){
 					o[i]=*(root->name);i++;
                                 root=c;}
 		}
@@ -87,7 +87,7 @@ char *decode(struct node *root,char *s)
 }
 main(int argc,char *argv[])
 {
-	char a[]="abbcccddddeeeeeffffffggggggghijklmnopqrstuvwxyfz";
+	char a[]="aaaccbeeeeedgff";
 	struct node *root=frequency(a);
 	root=tree(root);
 	assigncodes(root,"","");

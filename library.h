@@ -16,3 +16,5 @@ int len(struct node *p);
 struct node *tree(struct node *root);
 void SortedInsert(struct node** headRef, struct node* newNode);
 void InsertSort(struct node** headRef);
+void SortedInsertt(struct node** headRef, struct node* newNode);
+void InsertSortt(struct node** headRef);
