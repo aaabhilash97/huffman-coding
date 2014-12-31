@@ -9,7 +9,7 @@ newNode->next = *headRef;
 else {
 // Locate the node before the point of insertion
 struct node* current = *headRef;
-while (current->next!=NULL && strcmp((*headRef)->name,newNode->name)>0) {
+while (current->next!=NULL && strcmp((*headRef)->name,newNode->name)<0) {
 current = current->next;
 }
 newNode->next = current->next;
